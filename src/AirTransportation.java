@@ -8,8 +8,23 @@ public class AirTransportation extends Transportation {
     /**
      * Initializes the AirTransportation class.
      */
-    public AirTransportation(String transportationType, double cost, double averageSpeed,
+    public AirTransportation(String transportationName, double cost, double averageSpeed,
                              String purchaseType, int numPassengers, Date reservationTime) {
-        super(transportationType, cost, averageSpeed, purchaseType, numPassengers, reservationTime);
+        super("Air", transportationName, cost, averageSpeed, purchaseType,
+                numPassengers, reservationTime);
+    }
+
+    public AirTransportation(String transportationName,double cost, double averageSpeed,
+                             String purchaseType, int numPassengers) {
+        super("Air", transportationName, cost, averageSpeed, purchaseType, numPassengers);
+    }
+
+    public String tableFormat() {
+        return super.tableFormat();
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
     }
 }
