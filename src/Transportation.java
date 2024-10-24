@@ -1,14 +1,16 @@
+import java.util.Date;
+
 /**
  * Top level class in the inheritance. Defines the commonalities of all transportation types.
  * Includes tranportation type, cost, average speed, purchase type, and number of passengers.
  */
-
 public class Transportation {
     private String transportationType;
     private double cost;
     private double averageSpeed;
     private String purchaseType;
     private int numPassengers;
+    private Date reservationTime;
 
     /**
      * Constructor for Tranportation class.
@@ -17,55 +19,60 @@ public class Transportation {
      * @param averageSpeed Double; the average speed of the transportation.
      * @param purchaseType String; purchase type (rental or ticket)
      * @param numPassengers Int; the number of passengers the transportation can support.
+     * @param reservationTime Date; the date and time od the reservation (for either a rental or ticket)
      */
     public Transportation(String transportationType, double cost, double averageSpeed,
-                          String purchaseType, int numPassengers) {
+                          String purchaseType, int numPassengers, Date reservationTime) {
         this.transportationType = transportationType;
         this.cost = cost;
         this.averageSpeed = averageSpeed;
         this.purchaseType = purchaseType;
         this.numPassengers = numPassengers;
+        this.reservationTime = reservationTime;
     }
+
+    // Getters
+
 
     /**
      * Gets the transportation type.
      * @return String
      */
-    public String getTransportationType() {
-        return transportationType;
-    }
+    public String getTransportationType() {return transportationType;}
 
     /**
      * Gets the tranportation cost.
      * @return Double
      */
-    public double getCost() {
-        return cost;
-    }
+    public double getCost() {return cost;}
 
     /**
      * Gets the average speed of the transportation.
      * @return Double
      */
-    public double getAverageSpeed() {
-        return averageSpeed;
-    }
+    public double getAverageSpeed() {return averageSpeed;}
 
     /**
      * Gets the purchase type of the transportation.
      * @return String
      */
-    public String getPurchaseType() {
-        return purchaseType;
-    }
+    public String getPurchaseType() {return purchaseType;}
 
     /**
      * Gets the number of passengers the tranportation can hold.
      * @return int
      */
-    public int getNumPassengers() {
-        return numPassengers;
-    }
+    public int getNumPassengers() {return numPassengers;}
+
+    /**
+     * Gets the reservation time for the transportation.
+     * @return
+     */
+    public Date getReservationTime() {return reservationTime;}
+
+
+    // Setters
+
 
     /**
      * Sets the transportation type.
@@ -97,4 +104,12 @@ public class Transportation {
      */
     public void setNumPassengers(int numPassengers) {this.numPassengers = numPassengers;}
 
+    /**
+     * Sets the reservation time of the transportation.
+     * @param reservationTime Date; the time and date of the reservation.
+     */
+    public void setReservationTime(Date reservationTime) {this.reservationTime = reservationTime;}
+
 }
+
+
