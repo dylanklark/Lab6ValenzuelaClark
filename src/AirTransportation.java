@@ -1,22 +1,23 @@
 import java.util.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-// Need to review this one a bit
+// Need to add a getDepartureTime that calculates the departure time
 
 
 
 /**
  * A class representing air transportation (planes, helicopters, etc)
  */
-public class AirTransportation {
+public class AirTransportation extends Transportation {
     private Date departureTime;
 
     /**
      * Initializes the AirTransportation class with the departure time.
      * @param departureTime Date; the date (and time) the air transportation departs.
      */
-    public AirTransportation(double maxAltitude, Date departureTime) {
-        this.maxAltitude = maxAltitude;
+    public AirTransportation(Date departureTime, String transportationType, double cost, double averageSpeed,
+                             String purchaseType, int numPassengers) {
+        super(transportationType, cost, averageSpeed, purchaseType, numPassengers);
         this.departureTime = departureTime;
     }
 
