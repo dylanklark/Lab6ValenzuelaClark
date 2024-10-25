@@ -3,17 +3,16 @@ import java.util.Date;
 public class Dirigible extends AirTransportation {
 
     public Dirigible(String hotAirBaloon, double cost, double averageSpeed,
-                     String purchaseType, int numPassengers, String location, Date reservationTime) {
-        super("Dirigible", cost, averageSpeed, purchaseType, numPassengers, location, reservationTime);
+                     String purchaseType, int numPassengers, Date reservationTime) {
+        super("Dirigible", cost, averageSpeed, purchaseType, numPassengers, reservationTime);
     }
 
-    public Dirigible(double cost, int averageSpeed, String purchaseType, int numPassengers, String location) {
-        super("Dirigible", cost, averageSpeed, purchaseType, numPassengers, location);
+    public Dirigible(double cost, int averageSpeed, String purchaseType, int numPassengers) {
+        super("Dirigible", cost, averageSpeed, purchaseType, numPassengers);
     }
 
-    public Dirigible(String hotAirBaloon, double cost, double averageSpeed, String purchaseType, int numPassengers,
-                     String location) {
-        super(hotAirBaloon, cost, averageSpeed, purchaseType, numPassengers, location);
+    public Dirigible(String hotAirBaloon, double cost, double averageSpeed, String purchaseType, int numPassengers) {
+        super(hotAirBaloon, cost, averageSpeed, purchaseType, numPassengers);
     }
 
     public String tableFormat() {

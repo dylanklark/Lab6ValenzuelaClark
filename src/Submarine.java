@@ -2,11 +2,11 @@ import java.util.Date;
 
 public class Submarine extends WaterTransportation {
     public Submarine(double cost, double averageSpeed,
-                 String purchaseType, int numPassengers, String location, Date reservationTime) {
-        super("Submarine", cost, averageSpeed, purchaseType, numPassengers, location, reservationTime);
+                 String purchaseType, int numPassengers, Date reservationTime) {
+        super("Submarine", cost, averageSpeed, purchaseType, numPassengers, reservationTime);
     }
-    public Submarine(double cost, double averageSpeed, String purchaseType, int numPassengers, String location) {
-        super("Submarine", cost, averageSpeed, purchaseType, numPassengers, location);
+    public Submarine(double cost, double averageSpeed, String purchaseType, int numPassengers) {
+        super("Submarine", cost, averageSpeed, purchaseType, numPassengers);
     }
 
     public String tableFormat() {

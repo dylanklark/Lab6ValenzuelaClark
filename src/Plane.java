@@ -3,11 +3,11 @@ import java.util.Date;
 public class Plane extends AirTransportation {
 
     public Plane(double cost, double averageSpeed,
-                 String purchaseType, int numPassengers, String location, Date reservationTime) {
-        super("Plane", cost, averageSpeed, purchaseType, numPassengers, location, reservationTime);
+                 String purchaseType, int numPassengers, Date reservationTime) {
+        super("Plane", cost, averageSpeed, purchaseType, numPassengers, reservationTime);
     }
-    public Plane(double cost, double averageSpeed, String purchaseType, int numPassengers, String location) {
-        super("Plane", cost, averageSpeed, purchaseType, numPassengers, location);
+    public Plane(double cost, double averageSpeed, String purchaseType, int numPassengers) {
+        super("Plane", cost, averageSpeed, purchaseType, numPassengers);
     }
 
     public String tableFormat() {

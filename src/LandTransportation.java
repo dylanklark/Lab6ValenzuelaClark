@@ -2,15 +2,15 @@ import java.util.Date;
 public class LandTransportation extends Transportation {
 
     public LandTransportation(String transportationName, double cost, double averageSpeed,
-                              String purchaseType, int numPassengers, String location, Date reservationTime){
+                              String purchaseType, int numPassengers, Date reservationTime){
         super("Land", transportationName, cost, averageSpeed, purchaseType,
-                numPassengers, location, reservationTime);
+                numPassengers, "38.57157° N, 80.71940° W", reservationTime);
     }
 
     public LandTransportation(String transportationName, double cost, double averageSpeed,
-                              String purchaseType, int numPassengers, String location){
+                              String purchaseType, int numPassengers){
         super("Land", transportationName, cost, averageSpeed, purchaseType, numPassengers,
-                location);
+                "38.57157° N, 80.71940° W");
     }
     public String tableFormat() {return super.tableFormat();}
     @Override
