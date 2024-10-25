@@ -11,6 +11,7 @@ public class Transportation {
     private double averageSpeed;
     private String purchaseType;
     private int numPassengers;
+    private String location;
     private Date reservationTime;
 
     /**
@@ -24,13 +25,14 @@ public class Transportation {
      * @param reservationTime Date; the date and time od the reservation (for either a rental or ticket)
      */
     public Transportation(String transportationType, String transportationName, double cost, double averageSpeed,
-                          String purchaseType, int numPassengers, Date reservationTime) {
+                          String purchaseType, int numPassengers, String location, Date reservationTime) {
         this.transportationType = transportationType;
         this.transportationName = transportationName;
         this.cost = cost;
         this.averageSpeed = averageSpeed;
         this.purchaseType = purchaseType;
         this.numPassengers = numPassengers;
+        this.location = location;
         this.reservationTime = reservationTime;
     }
 
@@ -44,13 +46,14 @@ public class Transportation {
      * @param numPassengers Int; the number of passengers the transportation can support.
      */
     public Transportation(String transportationType, String transportationName, double cost, double averageSpeed,
-                          String purchaseType, int numPassengers) {
+                          String purchaseType, int numPassengers, String location) {
         this.transportationType = transportationType;
         this.transportationName = transportationName;
         this.cost = cost;
         this.averageSpeed = averageSpeed;
         this.purchaseType = purchaseType;
         this.numPassengers = numPassengers;
+        this.location = location;
     }
 
     // Getters
