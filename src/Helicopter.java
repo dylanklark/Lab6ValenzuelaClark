@@ -3,12 +3,12 @@ import java.util.Date;
 public class Helicopter extends AirTransportation {
 
     public Helicopter(double cost, double averageSpeed, String purchaseType,
-                      int numPassengers, String location, Date reservationTime) {
-        super("Helicopter", cost, averageSpeed, purchaseType, numPassengers, location, reservationTime);
+                      int numPassengers, Date reservationTime) {
+        super("Helicopter", cost, averageSpeed, purchaseType, numPassengers, reservationTime);
     }
 
-    public Helicopter(double cost, double averageSpeed, String purchaseType, int numPassengers, String location) {
-        super("Helicopter", cost, averageSpeed, purchaseType, numPassengers, location);
+    public Helicopter(double cost, double averageSpeed, String purchaseType, int numPassengers) {
+        super("Helicopter", cost, averageSpeed, purchaseType, numPassengers);
     }
 
     public String tableFormat() {

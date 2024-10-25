@@ -9,14 +9,15 @@ public class AirTransportation extends Transportation {
      * Initializes the AirTransportation class.
      */
     public AirTransportation(String transportationName, double cost, double averageSpeed,
-                             String purchaseType, int numPassengers, String location, Date reservationTime) {
+                             String purchaseType, int numPassengers, Date reservationTime) {
         super("Air", transportationName, cost, averageSpeed, purchaseType,
-                numPassengers, location, reservationTime);
+                numPassengers, "37.87874° N, 78.89665° W", reservationTime);
     }
 
     public AirTransportation(String transportationName,double cost, double averageSpeed,
-                             String purchaseType, int numPassengers, String location) {
-        super("Air", transportationName, cost, averageSpeed, purchaseType, numPassengers, location);
+                             String purchaseType, int numPassengers) {
+        super("Air", transportationName, cost, averageSpeed, purchaseType, numPassengers,
+                "37.87874° N, 78.89665° W");
     }
 
     public String tableFormat() {

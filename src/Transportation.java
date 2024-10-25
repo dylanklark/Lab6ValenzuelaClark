@@ -95,6 +95,8 @@ public class Transportation {
      */
     public int getNumPassengers() {return numPassengers;}
 
+    public String getLocation() {return location;}
+
     /**
      * Gets the reservation time for the transportation.
      * @return
@@ -140,6 +142,8 @@ public class Transportation {
      * @param numPassengers int; number of passengers that can be supported.
      */
     public void setNumPassengers(int numPassengers) {this.numPassengers = numPassengers;}
+
+    public void setLocation(String location) {this.location = location;}
 
     /**
      * Sets the reservation time of the transportation.

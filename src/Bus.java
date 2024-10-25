@@ -3,12 +3,12 @@ import java.util.Date;
 public class Bus extends Automobile {
 
     public Bus(double cost, double averageSpeed,
-                         String purchaseType, int numPassengers, String location, Date reservationTime) {
-        super("Bus", cost, averageSpeed, purchaseType, numPassengers, location, reservationTime);
+                         String purchaseType, int numPassengers, Date reservationTime) {
+        super("Bus", cost, averageSpeed, purchaseType, numPassengers, reservationTime);
     }
 
-    public Bus(double cost, double averageSpeed, String purchaseType, int numPassengers, String location) {
-        super("Bus", cost, averageSpeed, purchaseType, numPassengers, location);    }
+    public Bus(double cost, double averageSpeed, String purchaseType, int numPassengers) {
+        super("Bus", cost, averageSpeed, purchaseType, numPassengers);    }
 
     public String tableFormat() {
         return super.tableFormat();
