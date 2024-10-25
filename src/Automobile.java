@@ -7,7 +7,7 @@ public class Automobile extends LandTransportation {
         super("Automobile", cost, averageSpeed, purchaseType, numPassengers, reservationTime);
     }
 
-    public Automobile(int cost, int averageSpeed, String purchaseType, int numPassengers) {
+    public Automobile(double cost, double averageSpeed, String purchaseType, int numPassengers) {
         super("Automobile", cost, averageSpeed, purchaseType, numPassengers);
     }
 
