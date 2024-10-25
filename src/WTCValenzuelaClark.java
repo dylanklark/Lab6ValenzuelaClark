@@ -20,11 +20,14 @@ public class WTCValenzuelaClark {
                 displayTable(planeTicket, helicopterTicket, dirgibleTicket, airBalloonTicket);
                 transportOption = selectOption(planeTicket, helicopterTicket, dirgibleTicket, airBalloonTicket);
                 System.out.printf("%n%nYou selected '%s'%n" +
-                        "Enter 'yes' to continue or 'no' to change your preferred transportation method. ",
+                                "Enter 'yes' to continue or 'no' to change your preferred transportation method. ",
                         transportOption.getTransportationName());
                 String userChoice = input.nextLine().trim();
-                if (userChoice.toLowerCase().equals("yes")) {break;}
-                else {continue;}
+                if (userChoice.toLowerCase().equals("yes")) {
+                    break;
+                } else {
+                    continue;
+                }
             }
             System.out.print("How many passengers will be travelling with you? ");
             int passengerNum = input.nextInt();
@@ -41,24 +44,27 @@ public class WTCValenzuelaClark {
                 Automobile automobileTicket = new Automobile(40, 60, "Ticket", 5);
                 Automobile automobileRental = new Automobile(100, 60, "Rental", 5);
                 Bus busTicket = new Bus(7, 45, "Ticket", 40);
-                Bus busRental = new Bus (500, 45, "Rental", 40);
+                Bus busRental = new Bus(500, 45, "Rental", 40);
                 displayTable(trainTicket, bikeTicket, automobileTicket, busTicket);
                 transportOption = selectOption(trainTicket, bikeTicket, automobileTicket, busTicket);
                 System.out.printf("%n%nYou selected '%s'%n" +
                                 "Enter 'yes' to continue or 'no' to change your preferred transportation method. ",
                         transportOption.getTransportationName());
                 String userChoice = input.nextLine().trim();
-                if (userChoice.toLowerCase().equals("yes")) {break;}
-                else {continue;}
+                if (userChoice.toLowerCase().equals("yes")) {
+                    break;
+                } else {
+                    continue;
+                }
             }
             System.out.print("How many passengers will be travelling with you? ");
             int passengerNum = input.nextInt();
             int totalCost = (int) (passengerNum * transportOption.getCost());
             System.out.printf("Your total cost is: %d dollars.", totalCost);
         }
-        if (transportType.toUpperCase().equals("WATER")){
+        if (transportType.toUpperCase().equals("WATER")) {
             Transportation trasnportOption = null;
-            while(true){
+            while (true) {
                 Boat boatTicket = new Boat(20, 25, "Ticket", 10);
                 Boat boatRental = new Boat(200, 25, "Rental", 10);
                 Ship shipTicket = new Ship(20, 25, "Ticket", 1000);
@@ -70,15 +76,18 @@ public class WTCValenzuelaClark {
                 System.out.printf("%n%nYou selected '%s'%n" + "Enter 'yes' to continue or 'no' to change you preferred transportation method.",
                         transportOption.getTransportationName());
                 String userChoice = input.nextLine().trim();
-                if (userChoice.toLowerCase().equals("yes")) {break;}
-                else{continue;}
+                if (userChoice.toLowerCase().equals("yes")) {
+                    break;
+                } else {
+                    continue;
+                }
 
             }
         }
     }
 
     public static void displayTable(Plane planeTicket, Helicopter helicopterTicket, Dirigible dirgibleTicket,
-                                       HotAirBalloon airBalloonTicket) {
+                                    HotAirBalloon airBalloonTicket) {
         System.out.print("\nYour air transportation options are: \n" + "-".repeat(70) + "\n");
         String format = String.format("%%%ds\t%%%ds\t%%%ds\t%%%ds\t%%%ds%n", -15, -5, -5, -5, -5);
         System.out.printf(format, "Option", "Cost", "Average Speed", "Rental/Ticket", "Number of Passengers");
@@ -87,6 +96,7 @@ public class WTCValenzuelaClark {
         System.out.print(dirgibleTicket.tableFormat());
         System.out.print(airBalloonTicket.tableFormat());
     }
+
     public static void displayTable(Train trainTicket, Bike bikeTicket, Automobile automobileTicket,
                                     Bus busTicket) {
         System.out.print("\nYour land transportation options are: \n" + "-".repeat(70) + "\n");
@@ -97,7 +107,8 @@ public class WTCValenzuelaClark {
         System.out.print(automobileTicket.tableFormat());
         System.out.print(busTicket.tableFormat());
     }
-    public static void displayTable (Boat boatTicket, Ship shipTicket, Submarine submarineTicket){
+
+    public static void displayTable(Boat boatTicket, Ship shipTicket, Submarine submarineTicket) {
         System.out.print("\nYour water transportation options are: \n" + "-".repeat(70) + "\n");
         String format = String.format("%%%ds\t%%%ds\t%%%ds\t%%%ds\t%%%ds%n", -15, -5, -5, -5, -5);
         System.out.printf(format, "Option", "Cost", "Average Speed", "Rental/Ticket", "Number of Passengers");
@@ -107,7 +118,7 @@ public class WTCValenzuelaClark {
     }
 
     public static Transportation selectOption(Plane planeTicket, Helicopter helicopterTicket, Dirigible dirgibleTicket,
-                                      HotAirBalloon airBalloonTicket) {
+                                              HotAirBalloon airBalloonTicket) {
         Scanner input = new Scanner(System.in);
         System.out.print("\nWhich transportation option would you like to use? ");
         String transportOption = input.nextLine();
@@ -123,11 +134,12 @@ public class WTCValenzuelaClark {
                 return dirgibleTicket;
             case "HOT AIR BALLOON":
                 System.out.print(airBalloonTicket);
-                return  airBalloonTicket;
+                return airBalloonTicket;
             default:
                 return null;
         }
     }
+
     public static Transportation selectOption(Train trainTicket, Bike bikeTicket, Automobile automobileTicket,
                                               Bus busTicket) {
         Scanner input = new Scanner(System.in);
@@ -145,16 +157,17 @@ public class WTCValenzuelaClark {
                 return automobileTicket;
             case "BUS":
                 System.out.print(busTicket);
-                return  busTicket;
+                return busTicket;
             default:
                 return null;
         }
     }
-    public static Transportation selectOption(Boat boatTicket, Ship shipTicket, Submarine submarineTicket){
+
+    public static Transportation selectOption(Boat boatTicket, Ship shipTicket, Submarine submarineTicket) {
         Scanner input = new Scanner(System.in);
         System.out.print("\nWhich transportation option would you like to use? ");
         String transportOption = input.nextLine();
-        switch (transportOption.toUpperCase()){
+        switch (transportOption.toUpperCase()) {
             case "BOAT":
                 System.out.print(boatTicket);
                 return boatTicket;
@@ -164,7 +177,8 @@ public class WTCValenzuelaClark {
             case "SUBMARINE":
                 System.out.print(submarineTicket);
                 return submarineTicket;
+            default:
+                return null;
         }
     }
-
 }
