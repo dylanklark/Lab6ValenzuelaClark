@@ -11,8 +11,8 @@ public class WTCValenzuelaClark {
         String transportType = input.nextLine();
 
 
-        if (transportType.toUpperCase().equals("AIR")) {
-            Transportation transportOption = null;
+        if (transportType.equalsIgnoreCase("AIR")) {
+            Transportation transportOption;
             while (true) {
                 Plane planeTicket = new Plane(300, 550, "Ticket", 160);
                 Plane planeRental = new Plane(500, 550, "Rental", 160);
@@ -28,22 +28,19 @@ public class WTCValenzuelaClark {
                         dirgibleRental, airBalloonTicket, airBalloonRental);
                 transportOption = selectOption(planeTicket, planeRental, helicopterTicket,helicopterRental,
                         dirgibleTicket, dirgibleRental, airBalloonTicket, airBalloonRental);
+                assert transportOption != null;
                 System.out.printf("%n%nYou selected '%s'%n" +
                         "Enter 'yes' to continue or 'no' to change your preferred transportation method. ",
                         transportOption.getTransportationName());
                 String userChoice = input.nextLine().trim();
-                if (userChoice.toLowerCase().equals("yes")) {break;}
-                else {continue;}
+                if (userChoice.equalsIgnoreCase("yes")) {break;}
             }
-            System.out.print("How many passengers will be travelling with you? ");
-            int passengerNum = input.nextInt();
-            int totalCost = (int) (passengerNum * transportOption.getCost());
-            System.out.printf("Your total cost is: %d dollars.", totalCost);
+            travelInfo(transportOption, input);
         }
 
 
-        if (transportType.toUpperCase().equals("LAND")) {
-            Transportation transportOption = null;
+        if (transportType.equalsIgnoreCase("LAND")) {
+            Transportation transportOption;
             while (true) {
                 Train trainTicket = new Train(20, 50, "Ticket", 1000);
                 Train trainRental = new Train(400, 50, "Rental", 1000);
@@ -57,22 +54,19 @@ public class WTCValenzuelaClark {
                         automobileRental, busTicket, busRental);
                 transportOption = selectOption(trainTicket, trainRental, bikeTicket, bikeRental, automobileTicket,
                         automobileRental, busTicket, busRental);
+                assert transportOption != null;
                 System.out.printf("%n%nYou selected '%s'%n" +
                                 "Enter 'yes' to continue or 'no' to change your preferred transportation method. ",
                         transportOption.getTransportationName());
                 String userChoice = input.nextLine().trim();
-                if (userChoice.toLowerCase().equals("yes")) {break;}
-                else {continue;}
+                if (userChoice.equalsIgnoreCase("yes")) {break;}
             }
-            System.out.print("How many passengers will be travelling with you? ");
-            int passengerNum = input.nextInt();
-            int totalCost = (int) (passengerNum * transportOption.getCost());
-            System.out.printf("Your total cost is: %d dollars.", totalCost);
+            travelInfo(transportOption, input);
         }
 
 
-        if (transportType.toUpperCase().equals("WATER")){
-            Transportation transportOption = null;
+        if (transportType.equalsIgnoreCase("WATER")){
+            Transportation transportOption;
             while(true){
                 Boat boatTicket = new Boat(20, 25, "Ticket", 10);
                 Boat boatRental = new Boat(200, 25, "Rental", 10);
@@ -83,14 +77,14 @@ public class WTCValenzuelaClark {
                 displayTable(boatTicket, boatRental, shipTicket, shipRental, submarineTicket, submarineRental);
                 transportOption = selectOption(boatTicket, boatRental, shipTicket, shipRental, submarineTicket,
                         submarineRental);
+                assert transportOption != null;
                 System.out.printf("%n%nYou selected '%s'%n" +
                                 "Enter 'yes' to continue or 'no' to change your preferred transportation method. ",
                         transportOption.getTransportationName());
                 String userChoice = input.nextLine().trim();
-                if (userChoice.toLowerCase().equals("yes")) {break;}
-                else{continue;}
-
+                if (userChoice.equalsIgnoreCase("yes")) {break;}
             }
+            travelInfo(transportOption, input);
         }
     }
 
@@ -152,25 +146,25 @@ public class WTCValenzuelaClark {
         String puchaseOption = input.nextLine();
         switch (transportOption.toUpperCase()) {
             case "PLANE":
-                if (puchaseOption.toUpperCase().equals("RENTAL")) {
+                if (puchaseOption.equalsIgnoreCase("RENTAL")) {
                     System.out.print(planeRental);
                     return planeRental;
                 }
                 else {System.out.print(planeTicket); return planeTicket;}
             case "HELICOPTER":
-                if (puchaseOption.toUpperCase().equals("RENTAL")) {
+                if (puchaseOption.equalsIgnoreCase("RENTAL")) {
                     System.out.print(helicopterRental);
                     return helicopterRental;
                 }
                 else {System.out.print(helicopterTicket); return helicopterTicket;}
             case "DIRIGIBLE":
-                if (puchaseOption.toUpperCase().equals("RENTAL")) {
+                if (puchaseOption.equalsIgnoreCase("RENTAL")) {
                     System.out.print(dirgibleRental);
                     return dirgibleRental;
                 }
                 else {System.out.print(dirgibleTicket); return dirgibleTicket;}
             case "HOT AIR BALLOON":
-                if (puchaseOption.toUpperCase().equals("RENTAL")) {
+                if (puchaseOption.equalsIgnoreCase("RENTAL")) {
                     System.out.print(airBalloonRental);
                     return airBalloonRental;
                 }
@@ -191,25 +185,25 @@ public class WTCValenzuelaClark {
         String puchaseOption = input.nextLine();
         switch (transportOption.toUpperCase()) {
             case "TRAIN":
-                if (puchaseOption.toUpperCase().equals("RENTAL")) {
+                if (puchaseOption.equalsIgnoreCase("RENTAL")) {
                     System.out.print(trainRental);
                     return trainRental;
                 }
                 else {System.out.print(trainTicket); return trainTicket;}
             case "BIKE":
-                if (puchaseOption.toUpperCase().equals("RENTAL")) {
+                if (puchaseOption.equalsIgnoreCase("RENTAL")) {
                     System.out.print(bikeRental);
                     return bikeRental;
                 }
                 else {System.out.print(bikeTicket); return bikeTicket;}
             case "AUTOMOBILE":
-                if (puchaseOption.toUpperCase().equals("RENTAL")) {
+                if (puchaseOption.equalsIgnoreCase("RENTAL")) {
                     System.out.print(automobileRental);
                     return automobileRental;
                 }
                 else {System.out.print(automobileTicket); return automobileTicket;}
             case "BUS":
-                if (puchaseOption.toUpperCase().equals("RENTAL")) {
+                if (puchaseOption.equalsIgnoreCase("RENTAL")) {
                     System.out.print(busRental);
                     return busRental;
                 }
@@ -229,19 +223,19 @@ public class WTCValenzuelaClark {
         String puchaseOption = input.nextLine();
         switch (transportOption.toUpperCase()){
             case "BOAT":
-                if (puchaseOption.toUpperCase().equals("RENTAL")) {
+                if (puchaseOption.equalsIgnoreCase("RENTAL")) {
                     System.out.print(boatRental);
                     return boatRental;
                 }
                 else {System.out.print(boatTicket); return boatTicket;}
             case "SHIP":
-                if (puchaseOption.toUpperCase().equals("RENTAL")) {
+                if (puchaseOption.equalsIgnoreCase("RENTAL")) {
                     System.out.print(shipRental);
                     return shipRental;
                 }
                 else {System.out.print(shipTicket); return shipTicket;}
             case "SUBMARINE":
-                if (puchaseOption.toUpperCase().equals("RENTAL")) {
+                if (puchaseOption.equalsIgnoreCase("RENTAL")) {
                     System.out.print(submarineRental);
                     return submarineRental;
                 }
@@ -250,4 +244,26 @@ public class WTCValenzuelaClark {
                 return null;
         }
     }
+
+    public static void travelInfo(Transportation transportOption, Scanner input) {
+        if (transportOption.getPurchaseType().equals("Rental")) {
+            System.out.print("How many passengers will be travelling with you? ");
+            int passengerNum = input.nextInt();
+            System.out.print("Duration of your rental? ");
+            int rentalDuration = input.nextInt();
+            int totalCost = (int) (passengerNum * transportOption.getCost() * rentalDuration);
+            System.out.printf("%nYour total cost is: %d dollars.", totalCost);
+            System.out.printf("%nPlease head to '%s' {at some time} to pickup your rental.",
+                    transportOption.getLocation());
+        }
+        if (transportOption.getPurchaseType().equals("Ticket")) {
+            System.out.print("How many passengers will be travelling with you? ");
+            int passengerNum = input.nextInt();
+            int totalCost = (int) (passengerNum * transportOption.getCost());
+            System.out.printf("%nYour total cost is: %d dollars.", totalCost);
+            System.out.printf("%nPlease head to '%s' {at some time} to board your scheduled transportation.",
+                    transportOption.getLocation());
+        }
+    }
+
 }

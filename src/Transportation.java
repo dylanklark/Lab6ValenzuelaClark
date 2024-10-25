@@ -168,12 +168,13 @@ public class Transportation {
     }
     @Override
     public String toString() {
-        return String.format("%s%s%n%s%s%n%s%s%n%s%s%n%s%s%n%s%s",
+        return String.format("%s%s%n%s%s%n%s%s%n%s%s%n%s%s%n%s%s%n%s%s",
                 "Type: ", this.transportationType,
                 "Name: ", this.transportationName,
                 "Cost: ", this.cost,
                 "Average speed: ", this.averageSpeed,
                 "Purchase type: ", this.purchaseType,
+                "Location: ", this.location,
                 "Max passengers: ", this.numPassengers);
 
     }
