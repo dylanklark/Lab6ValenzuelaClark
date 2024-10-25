@@ -9,7 +9,7 @@ public class WTCValenzuelaClark {
         System.out.print("You can choose a type of transportation you prefer.\nPlease enter either" +
                 " Air, Water, or Land: ");
         String transportType = input.nextLine();
-
+//so
         if (transportType.toUpperCase().equals("AIR")) {
             Transportation transportOption = null;
             while (true) {
