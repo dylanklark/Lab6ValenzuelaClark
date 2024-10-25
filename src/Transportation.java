@@ -159,7 +159,6 @@ public class Transportation {
                 this.numPassengers);
 
     }
-
     @Override
     public String toString() {
         return String.format("%s%s%n%s%s%n%s%s%n%s%s%n%s%s%n%s%s",
