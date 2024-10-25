@@ -13,12 +13,18 @@ public class WTCValenzuelaClark {
         if (transportType.toUpperCase().equals("AIR")) {
             Transportation transportOption = null;
             while (true) {
-                Plane planeTicket = new Plane(100, 550, "Ticket", 160);
+                Plane planeTicket = new Plane(300, 550, "Ticket", 160);
+                Plane planeRental = new Plane(200, 550, "Rental", 160);
                 Helicopter helicopterTicket = new Helicopter(500, 125, "Ticket", 6);
+                Helicopter helicopterRental = new Helicopter(500, 125, "Rental", 6);
                 Dirigible dirgibleTicket = new Dirigible(500, 35, "Ticket", 15);
+                Dirigible dirgibleRental = new Dirigible(500, 35, "Rental", 15);
                 HotAirBalloon airBalloonTicket = new HotAirBalloon(250, 10, "Ticket", 10);
-                displayTable(planeTicket, helicopterTicket, dirgibleTicket, airBalloonTicket);
-                transportOption = selectOption(planeTicket, helicopterTicket, dirgibleTicket, airBalloonTicket);
+                HotAirBalloon airBalloonRental = new HotAirBalloon(250, 10, "Rental", 10);
+                displayTable(planeTicket,planeRental, helicopterTicket,helicopterRental,
+                        dirgibleTicket,dirgibleRental, airBalloonTicket,airBalloonRental);
+                transportOption = selectOption(planeTicket,planeRental, helicopterTicket,helicopterRental,
+                        dirgibleTicket,dirgibleRental, airBalloonTicket,airBalloonRental);
                 System.out.printf("%n%nYou selected '%s'%n" +
                         "Enter 'yes' to continue or 'no' to change your preferred transportation method. ",
                         transportOption.getTransportationName());
@@ -33,19 +39,23 @@ public class WTCValenzuelaClark {
         }
     }
 
-    public static void displayTable(Plane planeTicket, Helicopter helicopterTicket, Dirigible dirgibleTicket,
-                                       HotAirBalloon airBalloonTicket) {
+    public static void displayTable(Plane planeTicket, Plane planeRental, Helicopter helicopterTicket, Helicopter helicopterRental, Dirigible dirgibleTicket,
+                                    Dirigible dirgibleRental, HotAirBalloon airBalloonTicket, HotAirBalloon airBalloonRental) {
         System.out.print("\nYour air transportation options are: \n" + "-".repeat(70) + "\n");
         String format = String.format("%%%ds\t%%%ds\t%%%ds\t%%%ds\t%%%ds%n", -15, -5, -5, -5, -5);
         System.out.printf(format, "Option", "Cost", "Average Speed", "Rental/Ticket", "Number of Passengers");
         System.out.print(planeTicket.tableFormat());
+        System.out.print(planeRental.tableFormat());
         System.out.print(helicopterTicket.tableFormat());
+        System.out.print(helicopterRental.tableFormat());
         System.out.print(dirgibleTicket.tableFormat());
+        System.out.print(dirgibleRental.tableFormat());
         System.out.print(airBalloonTicket.tableFormat());
+        System.out.print(airBalloonRental.tableFormat());
     }
 
-    public static Transportation selectOption(Plane planeTicket, Helicopter helicopterTicket, Dirigible dirgibleTicket,
-                                      HotAirBalloon airBalloonTicket) {
+    public static Transportation selectOption(Plane planeTicket, Plane planeRental, Helicopter helicopterTicket, Helicopter helicopterRental, Dirigible dirgibleTicket,
+                                              Dirigible dirgibleRental, HotAirBalloon airBalloonTicket, HotAirBalloon airBalloonRental) {
         Scanner input = new Scanner(System.in);
         System.out.print("\nWhich transportation option would you like to use? ");
         String transportOption = input.nextLine();
