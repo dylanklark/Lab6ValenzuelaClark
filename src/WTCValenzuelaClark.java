@@ -57,6 +57,21 @@ public class WTCValenzuelaClark {
             int totalCost = (int) (passengerNum * transportOption.getCost());
             System.out.printf("Your total cost is: %d dollars.", totalCost);
         }
+        if (transportType.toUpperCase().equals("WATER")){
+            Transportation transportOption = null;
+            while(true) {
+                Boat boatTicket = new Boat(35, 30, "Ticket", 10);
+                Ship shipTicket = new Ship(250, 25, "Ticket", 300);
+                Submarine submarineTicket = new Submarine(200, 25, "Ticket", 100);
+                displayTable(boatTicket, shipTicket, submarineTicket);
+                transportOption = selectOption(boatTicket, shipTicket, submarineTicket);
+                System.out.printf("%n%nYou selected '%s'%n" +
+                        "Enter 'yes' to continue or 'no' to change your preferred transportation method. ",
+                        transportOption.getTransportationName());
+                String userChoice = input.nextLine().trim();
+                if (userChoice.toLowerCase().equals("yes")) {break;}
+                else {continue;}
+            }
     }
 
     public static void displayTable(Plane planeTicket, Plane planeRental, Helicopter helicopterTicket, Helicopter helicopterRental, Dirigible dirgibleTicket,
@@ -73,15 +88,23 @@ public class WTCValenzuelaClark {
         System.out.print(airBalloonTicket.tableFormat());
         System.out.print(airBalloonRental.tableFormat());
     }
-    public static void displayTable(Plane planeTicket, Helicopter helicopterTicket, Dirigible dirgibleTicket,
-                                       HotAirBalloon airBalloonTicket) {
+        public static void displayTable(Train trainTicket, Bike bikeTicket, Automobile automobileTicket,
+                                    Bus busTicket) {
         System.out.print("\nYour air transportation options are: \n" + "-".repeat(70) + "\n");
         String format = String.format("%%%ds\t%%%ds\t%%%ds\t%%%ds\t%%%ds%n", -15, -5, -5, -5, -5);
         System.out.printf(format, "Option", "Cost", "Average Speed", "Rental/Ticket", "Number of Passengers");
-        System.out.print(planeTicket.tableFormat());
-        System.out.print(helicopterTicket.tableFormat());
-        System.out.print(dirgibleTicket.tableFormat());
-        System.out.print(airBalloonTicket.tableFormat());
+        System.out.print(trainTicket.tableFormat());
+        System.out.print(bikeTicket.tableFormat());
+        System.out.print(automobileTicket.tableFormat());
+        System.out.print(busTicket.tableFormat());
+    }
+    public static void displayTable(Boat boatTicket, Ship shipTicket, Submarine submarineTicket){
+        System.out.print("\nYou land transportation options are: \n" + "-".repeat(70) + "\n");
+        String format = String.format("%%%ds\t%%%ds\t%%%ds\t%%%ds\t%%%ds%n", -15, -5, -5, -5, -5);
+        System.out.printf(format, "Option", "Cost", "Average Speed", "Rental/Ticket", "Number of Passengers");
+        System.out.print(boatTicket.tableFormat());
+        System.out.print(shipTicket.tableFormat());
+        System.out.print(submarineTicket.tableFormat());
     }
 
     public static Transportation selectOption(Plane planeTicket, Plane planeRental, Helicopter helicopterTicket, Helicopter helicopterRental, Dirigible dirgibleTicket,
@@ -123,6 +146,25 @@ public class WTCValenzuelaClark {
             case "BUS":
                 System.out.print(busTicket);
                 return  busTicket;
+            default:
+                return null;
+        }
+        
+    }
+        public static Transportation selectOption(Boat boatTicket, Ship shipTicket, Submarine submarineTicket){
+        Scanner input = new Scanner(System.in);
+        System.out.print("\nWhich transportation option would you like to use? ");
+        String transportOption = input.nextLine();
+        switch (transportOption.toUpperCase()){
+            case "BOAT":
+                System.out.print(boatTicket);
+                return boatTicket;
+            case "SHIP":
+                System.out.print(shipTicket);
+                return shipTicket;
+            case "SUBMARINE":
+                System.out.print(submarineTicket);
+                return submarineTicket;
             default:
                 return null;
         }
