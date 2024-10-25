@@ -11,10 +11,6 @@ public class Automobile extends LandTransportation {
         super("Automobile", cost, averageSpeed, purchaseType, numPassengers);
     }
 
-    public Automobile(String hotAirBaloon, int cost, int averageSpeed, String purchaseType, int numPassengers) {
-        super("Automobile", cost, averageSpeed, purchaseType, numPassengers);
-    }
-
     public String tableFormat() {
         return super.tableFormat();
     }
