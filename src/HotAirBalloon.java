@@ -7,7 +7,7 @@ public class HotAirBalloon extends Dirigible {
         super("Hot Air Balloon", cost, averageSpeed, purchaseType, numPassengers, reservationTime);
     }
 
-    public HotAirBalloon(int cost, int averageSpeed, String purchaseType, int numPassengers) {
+    public HotAirBalloon(double cost, double averageSpeed, String purchaseType, int numPassengers) {
         super("Hot Air Balloon", cost, averageSpeed, purchaseType, numPassengers);
     }
 
