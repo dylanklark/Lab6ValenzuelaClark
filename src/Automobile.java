@@ -7,13 +7,15 @@ public class Automobile extends LandTransportation {
 
     /**
      * Initializes and Automobile object. Provides data for transportationName.
-     * @param cost double; the cost
-     * @param averageSpeed double; average speed
-     * @param purchaseType String; whether purchase is rental or ticket
-     * @param maxPassengers int; max number of passengers
+     *
+     * @param bus
+     * @param cost            double; the cost
+     * @param averageSpeed    double; average speed
+     * @param purchaseType    String; whether purchase is rental or ticket
+     * @param maxPassengers   int; max number of passengers
      * @param reservationTime Date; time of reservation
      */
-    public Automobile(double cost, double averageSpeed,
+    public Automobile(String bus, double cost, double averageSpeed,
                       String purchaseType, int maxPassengers, Date reservationTime) {
         super("Automobile", cost, averageSpeed, purchaseType, maxPassengers, reservationTime);
     }
