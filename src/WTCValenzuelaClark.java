@@ -95,14 +95,9 @@ public class WTCValenzuelaClark {
         System.out.print("\nYour air transportation options are: \n" + "-".repeat(70) + "\n");
         String format = String.format("%%%ds\t%%%ds\t%%%ds\t%%%ds\t%%%ds%n", -15, -5, -5, -5, -5);
         System.out.printf(format, "Option", "Cost", "Average Speed", "Rental/Ticket", "Number of Passengers");
-        System.out.print(planeTicket.tableFormat());
-        System.out.print(planeRental.tableFormat());
-        System.out.print(helicopterTicket.tableFormat());
-        System.out.print(helicopterRental.tableFormat());
-        System.out.print(dirgibleTicket.tableFormat());
-        System.out.print(dirgibleRental.tableFormat());
-        System.out.print(airBalloonTicket.tableFormat());
-        System.out.print(airBalloonRental.tableFormat());
+        System.out.printf("%s%s%s%s%s%s%s%s", planeTicket.tableFormat(), planeRental.tableFormat(),
+                helicopterTicket.tableFormat(), helicopterRental.tableFormat(), dirgibleTicket.tableFormat(),
+        dirgibleRental.tableFormat(), airBalloonTicket.tableFormat(), airBalloonRental.tableFormat());
     }
 
     public static void displayTable(Train trainTicket, Train trainRental, Bike bikeTicket, Bike bikeRental,
@@ -111,14 +106,9 @@ public class WTCValenzuelaClark {
         System.out.print("\nYour land transportation options are: \n" + "-".repeat(70) + "\n");
         String format = String.format("%%%ds\t%%%ds\t%%%ds\t%%%ds\t%%%ds%n", -15, -5, -5, -5, -5);
         System.out.printf(format, "Option", "Cost", "Average Speed", "Rental/Ticket", "Number of Passengers");
-        System.out.print(trainTicket.tableFormat());
-        System.out.print(trainRental.tableFormat());
-        System.out.print(bikeTicket.tableFormat());
-        System.out.print(bikeRental.tableFormat());
-        System.out.print(automobileTicket.tableFormat());
-        System.out.print(automobileRental.tableFormat());
-        System.out.print(busTicket.tableFormat());
-        System.out.print(busRental.tableFormat());
+        System.out.printf("%s%s%s%s%s%s%s%s", trainTicket.tableFormat(), trainRental.tableFormat(),
+                bikeTicket.tableFormat(), bikeRental.tableFormat(), automobileTicket.tableFormat(),
+                automobileRental.tableFormat(), busTicket.tableFormat(), busRental.tableFormat());
     }
 
     public static void displayTable (Boat boatTicket, Boat boatRental, Ship shipTicket, Ship shipRental,
@@ -126,17 +116,14 @@ public class WTCValenzuelaClark {
         System.out.print("\nYour water transportation options are: \n" + "-".repeat(70) + "\n");
         String format = String.format("%%%ds\t%%%ds\t%%%ds\t%%%ds\t%%%ds%n", -15, -5, -5, -5, -5);
         System.out.printf(format, "Option", "Cost", "Average Speed", "Rental/Ticket", "Number of Passengers");
-        System.out.print(boatTicket.tableFormat());
-        System.out.print(boatRental.tableFormat());
-        System.out.print(shipTicket.tableFormat());
-        System.out.print(shipRental.tableFormat());
-        System.out.print(submarineTicket.tableFormat());
-        System.out.print(submarineRental.tableFormat());
+        System.out.printf("%s%s%s%s%s%s", boatTicket.tableFormat(), boatRental.tableFormat(),
+                shipTicket.tableFormat(), shipRental.tableFormat(), submarineTicket.tableFormat(),
+                submarineRental.tableFormat());
     }
 
     public static Transportation selectOption(Plane planeTicket, Plane planeRental, Helicopter helicopterTicket,
-                                              Helicopter helicopterRental, Dirigible dirgibleTicket,
-                                              Dirigible dirgibleRental, HotAirBalloon airBalloonTicket,
+                                              Helicopter helicopterRental, Dirigible dirigibleTicket,
+                                              Dirigible dirigibleRental, HotAirBalloon airBalloonTicket,
                                               HotAirBalloon airBalloonRental) {
         Scanner input = new Scanner(System.in);
         System.out.print("\nWhich transportation option would you like to use? Enter choice from " +
@@ -159,10 +146,10 @@ public class WTCValenzuelaClark {
                 else {System.out.print(helicopterTicket); return helicopterTicket;}
             case "DIRIGIBLE":
                 if (puchaseOption.equalsIgnoreCase("RENTAL")) {
-                    System.out.print(dirgibleRental);
-                    return dirgibleRental;
+                    System.out.print(dirigibleRental);
+                    return dirigibleRental;
                 }
-                else {System.out.print(dirgibleTicket); return dirgibleTicket;}
+                else {System.out.print(dirigibleTicket); return dirigibleTicket;}
             case "HOT AIR BALLOON":
                 if (puchaseOption.equalsIgnoreCase("RENTAL")) {
                     System.out.print(airBalloonRental);
@@ -253,16 +240,16 @@ public class WTCValenzuelaClark {
             int rentalDuration = input.nextInt();
             int totalCost = (int) (passengerNum * transportOption.getCost() * rentalDuration);
             System.out.printf("%nYour total cost is: %d dollars.", totalCost);
-            System.out.printf("%nPlease head to '%s' {at some time} to pickup your rental.",
-                    transportOption.getLocation());
+            System.out.printf("%nPlease head to '%s' at %s to pickup your rental.",
+                    transportOption.getLocation(), transportOption.getReservationTime());
         }
         if (transportOption.getPurchaseType().equals("Ticket")) {
             System.out.print("How many passengers will be travelling with you? ");
             int passengerNum = input.nextInt();
             int totalCost = (int) (passengerNum * transportOption.getCost());
             System.out.printf("%nYour total cost is: %d dollars.", totalCost);
-            System.out.printf("%nPlease head to '%s' {at some time} to board your scheduled transportation.",
-                    transportOption.getLocation());
+            System.out.printf("%nPlease head to '%s' at %s to board your scheduled transportation.",
+                    transportOption.getLocation(), transportOption.getReservationTime());
         }
     }
 

@@ -1,8 +1,12 @@
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
  * Top level class in the inheritance. Defines the commonalities of all transportation types.
- * Includes tranportation type, cost, average speed, purchase type, and number of passengers.
+ * Includes tranportation type, cost, average speed, purchase type, max number of passengers, a pickup/ride
+ * location, and a reservation time.
  */
 public class Transportation {
     private String transportationType;
@@ -10,18 +14,19 @@ public class Transportation {
     private double cost;
     private double averageSpeed;
     private String purchaseType;
-    private int numPassengers;
+    private int maxPassengers;
     private String location;
     private Date reservationTime;
 
     /**
-     * Constructor for Tranportation class.
+     * Constructor for Transportation class.
      * @param transportationType String; the transportation type.
      * @param transportationName String; the name of the transportation.
      * @param cost Double; the cost of the transportation.
      * @param averageSpeed Double; the average speed of the transportation.
      * @param purchaseType String; purchase type (rental or ticket)
      * @param numPassengers Int; the number of passengers the transportation can support.
+     * @param location String; the coordinates of the location.
      * @param reservationTime Date; the date and time od the reservation (for either a rental or ticket)
      */
     public Transportation(String transportationType, String transportationName, double cost, double averageSpeed,
@@ -31,7 +36,7 @@ public class Transportation {
         this.cost = cost;
         this.averageSpeed = averageSpeed;
         this.purchaseType = purchaseType;
-        this.numPassengers = numPassengers;
+        this.maxPassengers = numPassengers;
         this.location = location;
         this.reservationTime = reservationTime;
     }
@@ -52,7 +57,7 @@ public class Transportation {
         this.cost = cost;
         this.averageSpeed = averageSpeed;
         this.purchaseType = purchaseType;
-        this.numPassengers = numPassengers;
+        this.maxPassengers = numPassengers;
         this.location = location;
     }
 
@@ -93,15 +98,28 @@ public class Transportation {
      * Gets the number of passengers the tranportation can hold.
      * @return int
      */
-    public int getNumPassengers() {return numPassengers;}
+    public int getMaxPassengers() {return maxPassengers;}
 
+    /**
+     * Gets the location of the transportation rental.
+     * @return String; the transportation's location.
+     */
     public String getLocation() {return location;}
 
     /**
-     * Gets the reservation time for the transportation.
-     * @return
+     * Gets the reservation time for the transportation, will be at 2pm within 24 hours notce.
+     *
+     * @return String; the time of the reservation.
      */
-    public Date getReservationTime() {return reservationTime;}
+    public String getReservationTime() {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        Calendar calendar = Calendar.getInstance(); // Get the current date and time
+        calendar.add(Calendar.DAY_OF_MONTH, 1); // Add one day to the current date
+        calendar.set(Calendar.HOUR_OF_DAY, 14); // Set time to 2 PM
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+        Date reservationDate = calendar.getTime();
+        return dateFormat.format(reservationDate);}
 
 
     // Setters
@@ -139,10 +157,14 @@ public class Transportation {
 
     /**
      * Sets the number of passengers the transportation can support.
-     * @param numPassengers int; number of passengers that can be supported.
+     * @param maxPassengers int; number of passengers that can be supported.
      */
-    public void setNumPassengers(int numPassengers) {this.numPassengers = numPassengers;}
+    public void setMaxPassengers(int maxPassengers) {this.maxPassengers = maxPassengers;}
 
+    /**
+     * Sets the location of the transportation.
+     * @param location String; the location.
+     */
     public void setLocation(String location) {this.location = location;}
 
     /**
@@ -163,19 +185,25 @@ public class Transportation {
                 this.cost,
                 this.averageSpeed,
                 this.purchaseType,
-                this.numPassengers);
+                this.maxPassengers);
 
     }
+
+    /**
+     * String representation for the transportation class. Lists all attributes in a "list-like" format.
+     * @return String; string representation.
+     */
     @Override
     public String toString() {
-        return String.format("%s%s%n%s%s%n%s%s%n%s%s%n%s%s%n%s%s%n%s%s",
+        return String.format("%s%s%n%s%s%n%s%s%n%s%s%n%s%s%n%s%s%n%s%s%n%s%s",
                 "Type: ", this.transportationType,
                 "Name: ", this.transportationName,
                 "Cost: ", this.cost,
                 "Average speed: ", this.averageSpeed,
                 "Purchase type: ", this.purchaseType,
                 "Location: ", this.location,
-                "Max passengers: ", this.numPassengers);
+                "Reservation date: ", this.getReservationTime(),
+                "Max passengers: ", this.maxPassengers);
 
     }
 }
