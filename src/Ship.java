@@ -14,7 +14,7 @@ public class Ship extends WaterTransportation {
      */
     public Ship(double cost, double averageSpeed,
                 String purchaseType, int maxPassengers, Date reservationTime) {
-        super("Plane", cost, averageSpeed, purchaseType, maxPassengers, reservationTime);
+        super("Ship", cost, averageSpeed, purchaseType, maxPassengers, reservationTime);
     }
 
     /**
@@ -25,7 +25,7 @@ public class Ship extends WaterTransportation {
      * @param maxPassengers int; max number of passengers
      */
     public Ship(double cost, double averageSpeed, String purchaseType, int maxPassengers) {
-        super("Plane", cost, averageSpeed, purchaseType, maxPassengers);
+        super("Ship", cost, averageSpeed, purchaseType, maxPassengers);
     }
 
     /**

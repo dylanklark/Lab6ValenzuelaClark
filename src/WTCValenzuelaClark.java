@@ -316,9 +316,9 @@ public class WTCValenzuelaClark {
             if (passengerNum > transportOption.getMaxPassengers()) {
                 while (true) {
                     System.out.printf("Passengers exceed maximum capacity, please enter a value" +
-                            "less than %s: ", transportOption.getMaxPassengers());
+                            " less than or equal to %s: ", transportOption.getMaxPassengers());
                     passengerNum = input.nextInt();
-                    if (passengerNum < transportOption.getMaxPassengers()) {break;}
+                    if (passengerNum <= transportOption.getMaxPassengers()) {break;}
                 }
             }
             System.out.print("Duration of your rental? ");
@@ -335,9 +335,9 @@ public class WTCValenzuelaClark {
             if (passengerNum > transportOption.getMaxPassengers()) {
                 while (true) {
                     System.out.printf("Passengers exceed maximum capacity, please enter a value" +
-                            "less than %s: ", transportOption.getMaxPassengers());
+                            " less than or equal to %s: ", transportOption.getMaxPassengers());
                     passengerNum = input.nextInt();
-                    if (passengerNum < transportOption.getMaxPassengers()) {break;}
+                    if (passengerNum <= transportOption.getMaxPassengers()) {break;}
                 }
             }
             int totalCost = (int) (passengerNum * transportOption.getCost());
