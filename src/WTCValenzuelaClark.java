@@ -3,6 +3,7 @@ import java.util.Date;
 
 /*
 Main driver file for the program
+Polymorphism is used here where the displayTable and selectOption takes in different parameters.
  */
 public class WTCValenzuelaClark {
     public static void main(String[] args) {
