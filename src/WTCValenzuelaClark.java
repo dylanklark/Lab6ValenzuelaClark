@@ -315,6 +315,15 @@ public class WTCValenzuelaClark {
         if (transportOption.getPurchaseType().equals("Rental")) {
             System.out.print("How many passengers will be travelling with you? ");
             int passengerNum = input.nextInt();
+            // Ensures max capacity is not exceeded
+            if (passengerNum > transportOption.getMaxPassengers()) {
+                while (true) {
+                    System.out.printf("Passengers exceed maximum capacity, please enter a value" +
+                            "less than %s: ", transportOption.getMaxPassengers());
+                    passengerNum = input.nextInt();
+                    if (passengerNum < transportOption.getMaxPassengers()) {break;}
+                }
+            }
             System.out.print("Duration of your rental? ");
             int rentalDuration = input.nextInt();
             int totalCost = (int) (passengerNum * transportOption.getCost() * rentalDuration);
@@ -325,6 +334,15 @@ public class WTCValenzuelaClark {
         if (transportOption.getPurchaseType().equals("Ticket")) {
             System.out.print("How many passengers will be travelling with you? ");
             int passengerNum = input.nextInt();
+            // Ensures max capacity is not exceed
+            if (passengerNum > transportOption.getMaxPassengers()) {
+                while (true) {
+                    System.out.printf("Passengers exceed maximum capacity, please enter a value" +
+                            "less than %s: ", transportOption.getMaxPassengers());
+                    passengerNum = input.nextInt();
+                    if (passengerNum < transportOption.getMaxPassengers()) {break;}
+                }
+            }
             int totalCost = (int) (passengerNum * transportOption.getCost());
             System.out.printf("%nYour total cost is: %d dollars.", totalCost);
             System.out.printf("%nPlease head to '%s' at %s to board your scheduled transportation.",

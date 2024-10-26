@@ -16,7 +16,7 @@ public class Transportation {
     private String purchaseType;
     private int maxPassengers;
     private String location;
-    private String reservationTime;
+    private Date reservationTime;
 
     /**
      * Constructor for Transportation class.
@@ -30,7 +30,7 @@ public class Transportation {
      * @param reservationTime Date; the date and time od the reservation (for either a rental or ticket)
      */
     public Transportation(String transportationType, String transportationName, double cost, double averageSpeed,
-                          String purchaseType, int maxPassengers, String location, String reservationTime) {
+                          String purchaseType, int maxPassengers, String location, Date reservationTime) {
         this.transportationType = transportationType;
         this.transportationName = transportationName;
         this.cost = cost;
@@ -119,8 +119,7 @@ public class Transportation {
         calendar.set(Calendar.MINUTE, 0);
         calendar.set(Calendar.SECOND, 0);
         Date reservationDate = calendar.getTime();
-        String reservationTime = dateFormat.format(reservationDate);
-        return reservationTime;}
+        return dateFormat.format(reservationDate);}
 
 
     // Setters
@@ -172,7 +171,7 @@ public class Transportation {
      * Sets the reservation time of the transportation.
      * @param reservationTime Date; the time and date of the reservation.
      */
-    public void setReservationTime(String reservationTime) {this.reservationTime = reservationTime;}
+    public void setReservationTime(Date reservationTime) {this.reservationTime = reservationTime;}
 
 
     /**

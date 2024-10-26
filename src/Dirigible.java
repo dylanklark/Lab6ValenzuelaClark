@@ -17,7 +17,7 @@ public class Dirigible extends AirTransportation {
      */
     public Dirigible(double cost, double averageSpeed,
                      String purchaseType, int maxPassengers, Date reservationTime) {
-        super("Dirigible", cost, averageSpeed, purchaseType, this.maxPassengers, reservationTime);
+        super("Dirigible", cost, averageSpeed, purchaseType, maxPassengers, reservationTime);
     }
 
     /**
