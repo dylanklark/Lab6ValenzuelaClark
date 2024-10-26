@@ -16,7 +16,7 @@ public class Transportation {
     private String purchaseType;
     private int maxPassengers;
     private String location;
-    private Date reservationTime;
+    private String reservationTime;
 
     /**
      * Constructor for Transportation class.
@@ -25,18 +25,18 @@ public class Transportation {
      * @param cost Double; the cost of the transportation.
      * @param averageSpeed Double; the average speed of the transportation.
      * @param purchaseType String; purchase type (rental or ticket)
-     * @param numPassengers Int; the number of passengers the transportation can support.
+     * @param maxPassengers Int; the number of passengers the transportation can support.
      * @param location String; the coordinates of the location.
      * @param reservationTime Date; the date and time od the reservation (for either a rental or ticket)
      */
     public Transportation(String transportationType, String transportationName, double cost, double averageSpeed,
-                          String purchaseType, int numPassengers, String location, Date reservationTime) {
+                          String purchaseType, int maxPassengers, String location, String reservationTime) {
         this.transportationType = transportationType;
         this.transportationName = transportationName;
         this.cost = cost;
         this.averageSpeed = averageSpeed;
         this.purchaseType = purchaseType;
-        this.maxPassengers = numPassengers;
+        this.maxPassengers = maxPassengers;
         this.location = location;
         this.reservationTime = reservationTime;
     }
@@ -48,16 +48,16 @@ public class Transportation {
      * @param cost Double; the cost of the transportation.
      * @param averageSpeed Double; the average speed of the transportation.
      * @param purchaseType String; purchase type (rental or ticket)
-     * @param numPassengers Int; the number of passengers the transportation can support.
+     * @param maxPassengers Int; the number of passengers the transportation can support.
      */
     public Transportation(String transportationType, String transportationName, double cost, double averageSpeed,
-                          String purchaseType, int numPassengers, String location) {
+                          String purchaseType, int maxPassengers, String location) {
         this.transportationType = transportationType;
         this.transportationName = transportationName;
         this.cost = cost;
         this.averageSpeed = averageSpeed;
         this.purchaseType = purchaseType;
-        this.maxPassengers = numPassengers;
+        this.maxPassengers = maxPassengers;
         this.location = location;
     }
 
@@ -119,7 +119,8 @@ public class Transportation {
         calendar.set(Calendar.MINUTE, 0);
         calendar.set(Calendar.SECOND, 0);
         Date reservationDate = calendar.getTime();
-        return dateFormat.format(reservationDate);}
+        String reservationTime = dateFormat.format(reservationDate);
+        return reservationTime;}
 
 
     // Setters
@@ -171,7 +172,7 @@ public class Transportation {
      * Sets the reservation time of the transportation.
      * @param reservationTime Date; the time and date of the reservation.
      */
-    public void setReservationTime(Date reservationTime) {this.reservationTime = reservationTime;}
+    public void setReservationTime(String reservationTime) {this.reservationTime = reservationTime;}
 
 
     /**
