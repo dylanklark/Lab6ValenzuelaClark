@@ -15,6 +15,7 @@ public class Dirigible extends AirTransportation {
      * @param maxPassengers int; max number of passengers
      * @param reservationTime Date; time of reservation
      */
+    //Polymorphism is used in the constructors when different values are given
     public Dirigible(double cost, double averageSpeed,
                      String purchaseType, int maxPassengers, Date reservationTime) {
         super("Dirigible", cost, averageSpeed, purchaseType, maxPassengers, reservationTime);

@@ -13,6 +13,7 @@ public class Bus extends Automobile {
      * @param maxPassengers int; max passengers
      * @param reservationTime Date; time of reservation
      */
+    //Polymorphism is used in the constructors when different values are given
     public Bus(double cost, double averageSpeed,
                String purchaseType, int maxPassengers, Date reservationTime) {
         super("Bus", cost, averageSpeed, purchaseType, maxPassengers, reservationTime);

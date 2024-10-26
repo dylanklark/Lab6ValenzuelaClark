@@ -13,6 +13,7 @@ public class HotAirBalloon extends Dirigible {
      * @param maxPassengers int; max number of passengers
      * @param reservationTime Date; the time of reservation.
      */
+    //Polymorphism is used in the constructors when different values are given
     public HotAirBalloon(double cost, double averageSpeed,
                          String purchaseType, int maxPassengers, Date reservationTime) {
         super(cost, averageSpeed, purchaseType, maxPassengers, reservationTime);

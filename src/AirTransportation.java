@@ -16,6 +16,7 @@ public class AirTransportation extends Transportation {
      * @param maxPassengers int; max number of passengers
      * @param reservationTime Date; the date of reservation
      */
+    //Polymorphism is used in the constructors when different values are given
     public AirTransportation(String transportationName, double cost, double averageSpeed,
                              String purchaseType, int maxPassengers, Date reservationTime) {
         super("Air", transportationName, cost, averageSpeed, purchaseType,

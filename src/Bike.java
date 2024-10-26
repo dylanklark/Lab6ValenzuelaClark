@@ -12,6 +12,7 @@ public class Bike extends LandTransportation {
      * @param numPassengers int; max number of passengers
      * @param reservationTime Date; time of the reservation
      */
+    //Polymorphism is used in the constructors when different values are given
     public Bike(double cost, double averageSpeed, String purchaseType,
                  int numPassengers, Date reservationTime){
         super("Bike", cost, averageSpeed, purchaseType, numPassengers, reservationTime);
