@@ -30,7 +30,6 @@ public class WTCValenzuelaClark {
                 // Prompts and stores users' selected transportation option
                 transportOption = selectOption(planeTicket, planeRental, helicopterTicket,helicopterRental,
                         dirgibleTicket, dirgibleRental, airBalloonTicket, airBalloonRental);
-                assert transportOption != null;
                 System.out.printf("%n%nYou selected '%s'%n" +
                         "Enter 'yes' to continue or 'no' to change your preferred transportation method. ",
                         transportOption.getTransportationName());
@@ -59,7 +58,6 @@ public class WTCValenzuelaClark {
                 // Prompts and stores users' selected transportation option
                 transportOption = selectOption(trainTicket, trainRental, bikeTicket, bikeRental, automobileTicket,
                         automobileRental, busTicket, busRental);
-                assert transportOption != null;
                 System.out.printf("%n%nYou selected '%s'%n" +
                                 "Enter 'yes' to continue or 'no' to change your preferred transportation method. ",
                         transportOption.getTransportationName());
@@ -85,7 +83,6 @@ public class WTCValenzuelaClark {
                 // Prompts and stores users' selected transportation option
                 transportOption = selectOption(boatTicket, boatRental, shipTicket, shipRental, submarineTicket,
                         submarineRental);
-                assert transportOption != null;
                 System.out.printf("%n%nYou selected '%s'%n" +
                                 "Enter 'yes' to continue or 'no' to change your preferred transportation method. ",
                         transportOption.getTransportationName());
